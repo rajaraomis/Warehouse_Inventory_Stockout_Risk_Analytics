@@ -1,0 +1,69 @@
+# 📦 Warehouse Inventory & Stockout Risk Analytics
+
+An end-to-end Business Intelligence solution designed to track inventory levels, monitor lead times, and proactively identify high-risk products prone to stockouts across retail stores.
+
+---
+
+## 📌 Executive Summary
+
+Maintaining optimal stock levels is critical for supply chain efficiency. This project analyzes retail inventory data to provide actionable insights into stock distribution, lead times, and stockout vulnerabilities, enabling warehouse managers to minimize supply disruptions.
+
+---
+
+## 🎯 Key Objectives
+
+* **Stockout Risk Identification:** Measure and isolate products tagged with high stockout risk.
+* **Lead Time Analysis:** Analyze vendor fulfillment timelines across different product categories.
+* **Store-Level Distribution:** Identify store locations with the highest concentration of high-risk items.
+* **Interactive Monitoring:** Build an interactive Power BI dashboard for real-time decision-making.
+
+---
+
+## 📊 Key Metrics & Insights
+
+| Metric / Analysis | Value / Insight | Business Impact |
+| :--- | :--- | :--- |
+| **High Risk Products** | **690** items flagged | Requires immediate inventory replenishment |
+| **Total Unique Products** | **2,800** items | Complete catalog visibility across warehouses |
+| **Average Lead Time** | **7.43 Days** | Key benchmark for vendor delivery performance |
+| **Top Risk Stores** | **Store S2 & Store S1** | Highlighted for targeted stock distribution |
+
+---
+
+## 🛠️ Tools & Technologies Used
+
+* **Power BI Desktop:** DAX Calculations, Data Modeling, Custom Visual Formatting & Interactive Slicers.
+* **Data Source:** CSV File (`inventory_data.csv`).
+* **Documentation & Presentation:** Markdown, ScreenToGIF, MS PowerPoint.
+
+---
+
+## 🧮 Key DAX Measures
+
+```dax
+High Risk Products = 
+CALCULATE(
+    COUNTROWS(inventory_data), 
+    inventory_data[stockout_risk] IN {"Yes", "True", "1"}
+)
+```
+
+---
+
+## 📈 Dashboard Features
+
+1. **KPI Cards:** Top-level metrics for High Risk Count, Total Products, and Average Lead Time.
+2. **Donut Chart:** Proportion breakdown of stockout risk categories.
+3. **Clustered Bar Chart:** Top store locations sorted by high-risk inventory count.
+4. **Line Chart:** Trend analysis of current stock levels across product IDs.
+5. **Interactive Slicer:** Dynamic filtering by `store_id` for granular analysis.
+
+---
+
+## 💡 Strategic Recommendations
+
+* **Prioritize High-Risk Reordering:** Focus procurement efforts on the **690 high-risk products** to avoid sales losses.
+* **Optimize Store Allocation:** Reallocate safety stock to **Store S2 and S1**, which carry the highest stockout vulnerabilities.
+* **Vendor SLA Adjustments:** Re-evaluate suppliers with lead times exceeding the **7.43-day average**.
+```text?code_stdout&code_event_index=1
+File created successfully: README.md
